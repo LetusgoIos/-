@@ -20,24 +20,20 @@
 #pragma mark -- 头像
         UIImageView * iconImageView = [[UIImageView alloc] init];
         self.pathimg = iconImageView;
-        iconImageView.backgroundColor = [UIColor purpleColor];
         [self.contentView addSubview:iconImageView];
         
 #pragma mark -- 名字
         UILabel * imageLabel = [[UILabel alloc] init];
         self.nickname = imageLabel;
-        imageLabel.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:imageLabel];
   
 #pragma mark -- 内容
         UILabel * contentLabel = [[UILabel alloc] init];
         self.content = contentLabel;
-        contentLabel.backgroundColor = [UIColor greenColor];
         [self.contentView addSubview:contentLabel];
    
         
         UIView * bottomView = [[UIView alloc] init];
-       // bottomView.backgroundColor = [UIColor grayColor];
         [self.contentView addSubview:bottomView];
         
         [bottomView  mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -85,7 +81,6 @@
 #pragma mark -- 赞
         UILabel * goodNumLabel = [[UILabel alloc]init];
         self.praise = goodNumLabel;
-        goodNumLabel.backgroundColor = [UIColor redColor];
         [bottomView addSubview:goodNumLabel];
         
         UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -98,11 +93,9 @@
 #pragma mark -- 分享
         UILabel * shareNumLabel = [[UILabel alloc]init];
         self.forward = shareNumLabel;
-        shareNumLabel.backgroundColor = [UIColor yellowColor];
         [bottomView addSubview:shareNumLabel];
         
         UIButton * messageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-       // messageButton.backgroundColor = [UIColor magentaColor];
         [messageButton setImage:[UIImage imageNamed:@"pinglun01@2x.png"] forState:UIControlStateNormal];
         [messageButton setImage:[UIImage imageNamed:@"pinglun02@2x.png"] forState:UIControlStateHighlighted];
         [bottomView addSubview:messageButton];
@@ -110,7 +103,6 @@
 #pragma mark -- 评论
         UILabel * messageNumLabel = [[UILabel alloc]init];
         self.coms = messageNumLabel;
-        messageNumLabel.backgroundColor = [UIColor greenColor];
         [bottomView addSubview:messageNumLabel];
         
         UIButton * loveButton = [UIButton buttonWithType:UIButtonTypeCustom];
