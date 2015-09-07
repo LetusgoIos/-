@@ -1,0 +1,48 @@
+//
+//  PrefixHeader.pch
+//  观天下
+//
+//  Created by MS on 15/9/5.
+//  Copyright (c) 2015年 MS. All rights reserved.
+//
+
+#ifndef ____PrefixHeader_pch
+#define ____PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+
+//  屏幕适配
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import "DownLoadData.h"
+
+
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+#import "UIImageView+WebCache.h"
+//#import "GDataXMLNode.h"
+#import "Masonry.h"
+#endif
+
+#define HScreen [[UIScreen mainScreen] bounds].size.height
+#define WScreen [[UIScreen mainScreen] bounds].size.width
+#define iOS7 [[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0
+
+
+//下拉刷新
+#import "UIView+MJExtension.h"
+#import "MJRefresh.h"
+
+
+//活动指示器
+#import "MBProgressHUD.h"
