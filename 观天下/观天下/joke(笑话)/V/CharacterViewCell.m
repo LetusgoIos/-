@@ -37,15 +37,15 @@
         [self.contentView addSubview:bottomView];
         
         [bottomView  mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(superView.mas_left).offset(5);
-            make.right.equalTo(superView.mas_right).offset(-5);
-            make.bottom.equalTo(superView.mas_bottom).offset(-5);
+            make.left.equalTo(superView.mas_left).offset(15);
+            make.right.equalTo(superView.mas_right).offset(-15);
+            make.bottom.equalTo(superView.mas_bottom).offset(-15);
             make.height.equalTo(superView).multipliedBy(1.0/8.0);
         }];
         
         [iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(superView.mas_left).offset(5);
-            make.top.equalTo(superView.mas_top).offset(5);
+            make.left.equalTo(superView.mas_left).offset(15);
+            make.top.equalTo(superView.mas_top).offset(15);
 //            make.bottom.equalTo(contentLabel.mas_top).offset(-5);
            // make.height.equalTo(superView).multipliedBy(1.0/6.0);
 //            make.width.equalTo(iconImageView.mas_height);
@@ -57,14 +57,14 @@
         
         [imageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(iconImageView.mas_right).offset(5);
-            make.top.equalTo(superView.mas_top).offset(10);
-            make.right.equalTo(superView.mas_right).offset(-5);
+            make.top.equalTo(superView.mas_top).offset(20);
+            make.right.equalTo(superView.mas_right).offset(-15);
             make.bottom.equalTo(contentLabel.mas_top).offset(-10);
            // make.height.equalTo(@[iconImageView]);
         }];
         
         [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(superView.mas_left).offset(5);
+            make.left.equalTo(superView.mas_left).offset(15);
             make.top.equalTo(iconImageView.mas_bottom).offset(5);
             make.right.equalTo(superView.mas_right).offset(-5);
             make.bottom.equalTo(bottomView.mas_top).offset(-5);
@@ -81,6 +81,8 @@
 #pragma mark -- 赞
         UILabel * goodNumLabel = [[UILabel alloc]init];
         self.praise = goodNumLabel;
+        goodNumLabel.textColor = [UIColor grayColor];
+        goodNumLabel.font = [UIFont systemFontOfSize:14];
         [bottomView addSubview:goodNumLabel];
         
         UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -93,6 +95,8 @@
 #pragma mark -- 分享
         UILabel * shareNumLabel = [[UILabel alloc]init];
         self.forward = shareNumLabel;
+        shareNumLabel.textColor = [UIColor grayColor];
+        shareNumLabel.font = [UIFont systemFontOfSize:14];
         [bottomView addSubview:shareNumLabel];
         
         UIButton * messageButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -103,7 +107,9 @@
 #pragma mark -- 评论
         UILabel * messageNumLabel = [[UILabel alloc]init];
         self.coms = messageNumLabel;
-        [bottomView addSubview:messageNumLabel];
+        messageNumLabel.textColor = [UIColor grayColor];
+        messageNumLabel.font = [UIFont systemFontOfSize:14];
+          [bottomView addSubview:messageNumLabel];
         
         UIButton * loveButton = [UIButton buttonWithType:UIButtonTypeCustom];
         //loveButton.backgroundColor = [UIColor blueColor];
@@ -193,7 +199,7 @@
     self.content.frame = CGRectMake(self.content.frame.origin.x, self.content.frame.origin.y, labelSize.width, labelSize.height);
     
     //计算出自适应的高度
-    frame.size.height = labelSize.height+60;
+    frame.size.height = labelSize.height+100;
     self.frame = frame;
     
     

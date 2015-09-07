@@ -9,8 +9,11 @@
 #import "CharacterViewController.h"
 #import "CharacterViewCell.h"
 
+static int n = 1;
 @interface CharacterViewController ()
-
+{
+    MBProgressHUD *HUD;
+}
 @end
 
 @implementation CharacterViewController
@@ -20,7 +23,27 @@
     
     [self downData];
     
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    HUD.delegate = self;
+    HUD.labelText = @"Loading";
+    
+    [self.view addSubview:HUD];
+    
+    [HUD show:YES];
+    
+    
+    //    =========下拉刷新==========
+    __weak typeof(self) weakSelf = self;
+    // 添加传统的上拉刷新
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    [self.tableAll addLegendFooterWithRefreshingBlock:^{
+        [weakSelf downData];
+    }];
+    
 }
+
+
 #pragma mark -- 数据下载
 -(void)downData
 {
@@ -28,8 +51,10 @@
         
         
         if (obj) {
-            
-            self.dataSouce = obj;
+            n ++;
+            [HUD hide:YES];
+//            self.dataSouce = obj;
+            [self.dataSouce addObjectsFromArray:obj];
             [self.tableAll reloadData];
             
         }else{
@@ -37,7 +62,7 @@
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"数据下载失败" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alertView show];
         }
-    } withPage:1];
+    } withPage:n];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

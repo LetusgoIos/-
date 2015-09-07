@@ -8,6 +8,6 @@
 
 #import "MainViewController.h"
 
-@interface CharacterViewController : MainViewController
+@interface CharacterViewController : MainViewController<MBProgressHUDDelegate>
 
 @end

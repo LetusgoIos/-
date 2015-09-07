@@ -15,7 +15,7 @@
 @implementation NextViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+
     self.view.backgroundColor = [UIColor whiteColor];
     UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height -44)];
     [self.view addSubview:web];
@@ -25,7 +25,9 @@
     [web loadRequest:request];
     
     
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

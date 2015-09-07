@@ -115,7 +115,11 @@ static int n = 0;
         NextViewController *next = [[NextViewController alloc]init];
         NewsMode *newsMode = self.dataSouce[indexPath.row];
         next.urlString = newsMode.newsUrl;
+    
+    
     [self.navigationController pushViewController:next animated:YES];
+     
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -74,6 +74,7 @@
     scrollView.userInteractionEnabled = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.bounces = NO;
     [self.view addSubview:scrollView];
     
     [scrollView setContentSize:CGSizeMake(WScreen * (2), bgViewHeight)];
