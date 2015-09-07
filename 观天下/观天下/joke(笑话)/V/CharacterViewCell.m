@@ -50,10 +50,32 @@
            // make.height.equalTo(superView).multipliedBy(1.0/6.0);
 //            make.width.equalTo(iconImageView.mas_height);
             
-            make.width.equalTo(70);
-            make.height.equalTo(70);
+            make.width.equalTo(superView.width).multipliedBy(1/6.0);
+            make.height.equalTo(iconImageView.width);
             
         }];
+        
+        
+#pragma mark -- 分界线
+        //        屏幕宽
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        //        分界线的间距
+        int line = (width-6)/4;
+        for (int i = 0; i < 3; i ++) {
+            UIView *viewline = [[UIView alloc]init];
+            viewline.backgroundColor = [UIColor grayColor];
+            viewline.alpha = 0.5;
+            [bottomView addSubview:viewline];
+            [viewline makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.contentView.left).offset(line + i *line + 15);
+                make.centerY.equalTo(bottomView.centerY);
+                make.width.equalTo(2);
+                make.height.equalTo(20);
+            }];
+        }
+        
+        
+        
         
         [imageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(iconImageView.mas_right).offset(5);
@@ -87,6 +109,8 @@
         
         UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
         //shareButton.backgroundColor = [UIColor cyanColor];
+        [shareButton addTarget:self action:@selector(change:) forControlEvents:UIControlEventTouchUpInside];
+        
         [shareButton setImage:[UIImage imageNamed:@"zhuanfa01@2x.png"] forState:UIControlStateNormal];
         [shareButton setImage:[UIImage imageNamed:@"zhuanfa02@2x.png"] forState:UIControlStateHighlighted];
         [bottomView addSubview:shareButton];
@@ -210,7 +234,10 @@
      
 }
 
-
+-(void)change:(UIButton *)btn
+{
+    NSLog(@"点击");
+}
 
 
 

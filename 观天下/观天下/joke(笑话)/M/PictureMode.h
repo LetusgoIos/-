@@ -19,7 +19,7 @@
 @property(nonatomic,copy)NSString *nopraise;
 @property(nonatomic,copy)NSString *coll;
 @property(nonatomic,copy)NSString *forward;
-@property(nonatomic,copy)NSString *coms;
+@property(nonatomic,assign)int *coms;
 @property(nonatomic,copy)NSString *addtime;
 
 -(instancetype)initWithDic:(NSDictionary *)dic;

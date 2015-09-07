@@ -88,6 +88,7 @@
 		4E3644611B9C66D50004D625 /* shoucang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3644591B9C66D50004D625 /* shoucang@2x.png */; };
 		4E3644621B9C66D50004D625 /* zhuanfa01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E36445A1B9C66D50004D625 /* zhuanfa01@2x.png */; };
 		4E3644631B9C66D50004D625 /* zhuanfa02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E36445B1B9C66D50004D625 /* zhuanfa02@2x.png */; };
+		4E6002161B9D390C00692A41 /* PictureViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6002151B9D390C00692A41 /* PictureViewCell.m */; };
 		4EA4D1C61B9AB4C4002D6312 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4D1C51B9AB4C4002D6312 /* main.m */; };
 		4EA4D1C91B9AB4C4002D6312 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4D1C81B9AB4C4002D6312 /* AppDelegate.m */; };
 		4EA4D1CB1B9AB4C4002D6312 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EA4D1CA1B9AB4C4002D6312 /* Images.xcassets */; };
@@ -268,6 +269,8 @@
 		4E3644591B9C66D50004D625 /* shoucang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shoucang@2x.png"; sourceTree = "<group>"; };
 		4E36445A1B9C66D50004D625 /* zhuanfa01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuanfa01@2x.png"; sourceTree = "<group>"; };
 		4E36445B1B9C66D50004D625 /* zhuanfa02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuanfa02@2x.png"; sourceTree = "<group>"; };
+		4E6002141B9D390C00692A41 /* PictureViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewCell.h; sourceTree = "<group>"; };
+		4E6002151B9D390C00692A41 /* PictureViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewCell.m; sourceTree = "<group>"; };
 		4EA4D1C01B9AB4C4002D6312 /* 观天下.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "观天下.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA4D1C41B9AB4C4002D6312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EA4D1C51B9AB4C4002D6312 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -616,6 +619,8 @@
 			children = (
 				4E3644501B9C65460004D625 /* CharacterViewCell.h */,
 				4E3644511B9C65460004D625 /* CharacterViewCell.m */,
+				4E6002141B9D390C00692A41 /* PictureViewCell.h */,
+				4E6002151B9D390C00692A41 /* PictureViewCell.m */,
 				4E3643E11B9BEF080004D625 /* SwitchView.h */,
 				4E3643E21B9BEF080004D625 /* SwitchView.m */,
 			);
@@ -937,6 +942,7 @@
 				4E3644521B9C65460004D625 /* CharacterViewCell.m in Sources */,
 				4E36440A1B9C34F30004D625 /* MJRefreshComponent.m in Sources */,
 				4E3643621B9AC7EB0004D625 /* UIWebView+AFNetworking.m in Sources */,
+				4E6002161B9D390C00692A41 /* PictureViewCell.m in Sources */,
 				4E3643801B9ACFFB0004D625 /* EScrollerView.m in Sources */,
 				4E3643A71B9ADA8F0004D625 /* MASConstraint.m in Sources */,
 				4E3644131B9C34F30004D625 /* UIScrollView+MJRefresh.m in Sources */,

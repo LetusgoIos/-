@@ -116,7 +116,7 @@ static int n = 0;
         NewsMode *newsMode = self.dataSouce[indexPath.row];
         next.urlString = newsMode.newsUrl;
     
-    
+    next.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:next animated:YES];
      
     
