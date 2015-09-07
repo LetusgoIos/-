@@ -13,6 +13,8 @@
 #import "NewsMode.h"
 #import "TitileMode.h"
 
+
+
 static int n = 0;
 @interface NewsViewController ()
 {
@@ -111,12 +113,15 @@ static int n = 0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    
+    
         NextViewController *next = [[NextViewController alloc]init];
         NewsMode *newsMode = self.dataSouce[indexPath.row];
+    
+    
         next.urlString = newsMode.newsUrl;
     
-    next.hidesBottomBarWhenPushed = YES;
+
     [self.navigationController pushViewController:next animated:YES];
      
     
