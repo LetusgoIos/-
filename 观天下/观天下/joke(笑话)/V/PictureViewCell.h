@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLAnimatedImage.h"
+#import "FLAnimatedImageView.h"
 @class PictureMode;
 @interface PictureViewCell : UITableViewCell
 @property(nonatomic,strong)UIImageView *pathimg;
 @property(nonatomic,strong)UILabel *nickname;
 @property(nonatomic,copy)UILabel *content;
-@property(nonatomic,strong)UIImageView *img;
+@property(nonatomic,strong)FLAnimatedImageView *img;
+
 //赞
 //@property(nonatomic,copy)NSString *praise;
 //转发

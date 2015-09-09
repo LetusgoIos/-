@@ -25,7 +25,6 @@
         
 #pragma mark -- 头像
         _pathimg = [[UIImageView alloc]init];
-        _pathimg.backgroundColor = [UIColor redColor];
         [superView addSubview:_pathimg];
         
         [_pathimg mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -38,7 +37,6 @@
 #pragma mark --用户名
         
         _nickname =[[UILabel alloc]init];
-        _nickname.backgroundColor = [UIColor orangeColor];
         [superView addSubview:_nickname];
         [_nickname mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_pathimg.right).offset(10);
@@ -51,7 +49,7 @@
 #pragma mark -- 描述
         
         _content = [[UILabel alloc]init];
-        _content.backgroundColor = [UIColor yellowColor];
+
         [superView addSubview:_content];
         
         [_content mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -63,8 +61,7 @@
         }];
         
 #pragma mark -- 内容图片
-        _img = [[UIImageView alloc]init];
-        _img.backgroundColor = [UIColor grayColor];
+        _img = [[FLAnimatedImageView alloc]init];
         [superView addSubview:_img];
         [_img makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_content.left);
@@ -94,6 +91,7 @@
     int line = (width-6)/4;
     for (int i = 0; i < 3; i ++) {
         UIView *viewline = [[UIView alloc]init];
+        viewline.alpha = 0.5;
         viewline.backgroundColor = [UIColor grayColor];
          [view addSubview:viewline];
         [viewline makeConstraints:^(MASConstraintMaker *make) {
@@ -123,10 +121,6 @@
         }];
     }
     
-    
-    
-    
-    
     return self;
 }
 
@@ -142,7 +136,28 @@
     
     NSString *path1 = app.img[0];
     NSURL *url1 = [NSURL URLWithString:path1];
-    [self.img setImageWithURL:url1];
+//    [self.img setImageWithURL:url1];
+    
+    
+    
+    FLAnimatedImage * __block animatedImage2 = nil;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSURL *url2 = [NSURL URLWithString:@"http://raphaelschaad.com/static/nyan.gif"];
+        NSData *data2 = [NSData dataWithContentsOfURL:url1];
+        animatedImage2 = [FLAnimatedImage animatedImageWithGIFData:data2];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.img.animatedImage = animatedImage2;
+    
+        });
+    });
+
+    
+    
+    
+    
+    
+    
     
     UIButton *praise = (UIButton *)[view viewWithTag:1];
     [praise setTitle:app.praise forState:UIControlStateNormal];
