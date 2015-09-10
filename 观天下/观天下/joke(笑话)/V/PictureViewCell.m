@@ -8,9 +8,46 @@
 
 #import "PictureViewCell.h"
 #import "PictureMode.h"
+static NSMutableDictionary *operrations;
+static NSMutableDictionary *images;
+static NSOperationQueue *queue;
+@interface PictureViewCell ()
+//存放所有下载操作的队列
+@property(nonatomic,strong)NSOperationQueue *queue;
+//存放所有下载操作
+//@property(nonatomic,strong)NSMutableDictionary *operrations;
+//存放所有下载完的图片
+//@property(nonatomic,strong)NSMutableDictionary *images;
+@end
+
 @implementation PictureViewCell
 {
     UIView *view;
+    
+}
+
+#pragma mark -- 懒加载
+-(NSOperationQueue *)queue
+{
+    if (queue == nil) {
+        queue = [[NSOperationQueue alloc]init];
+    }
+    return queue;
+}
+
+-(NSMutableDictionary *)operrations
+{
+    if (operrations == nil) {
+        operrations = [[NSMutableDictionary alloc]init];
+    }
+    return operrations;
+}
+-(NSMutableDictionary *)images
+{
+    if (images == nil) {
+        images = [[NSMutableDictionary alloc]init];
+    }
+    return images;
 }
 
 - (void)awakeFromNib {
@@ -20,6 +57,9 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         UIView *superView = self.contentView;
+        [self queue];
+        [self images];
+        [self operrations];
         
         self.selectionStyle = UITableViewCellEditingStyleNone;
         
@@ -128,29 +168,71 @@
 {
     NSString *path = app.pathimg;
     NSURL *url = [NSURL URLWithString:path];
-    [self.pathimg setImageWithURL:url];
+    [self.pathimg sd_setImageWithURL:url];
     
     self.nickname.text = app.nickname;
     self.content.text = app.content;
-    
+
+#pragma mark -- 加载gif 图片
     
     NSString *path1 = app.img[0];
     NSURL *url1 = [NSURL URLWithString:path1];
-//    [self.img setImageWithURL:url1];
     
     
+    FLAnimatedImage *image = self.images[path1];
     
-    FLAnimatedImage * __block animatedImage2 = nil;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        NSURL *url2 = [NSURL URLWithString:@"http://raphaelschaad.com/static/nyan.gif"];
-        NSData *data2 = [NSData dataWithContentsOfURL:url1];
-        animatedImage2 = [FLAnimatedImage animatedImageWithGIFData:data2];
+    if (image) {
+        NSLog(@"从缓存种取图片");
+         self.img.animatedImage = image;
+    }else{
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.img.animatedImage = animatedImage2;
+//        天占位图片
+        self.img.image = [UIImage imageNamed:@"bjtp"];
+        
+        NSBlockOperation *operation1 = self.operrations[path1];
+        NSLog(@"%@",operation1);
+        if (operation1 == nil) {
+            NSLog(@"下载图片");
+            FLAnimatedImage * __block animatedImage2 = nil;
+            
+            NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+                NSData *data2 = [NSData dataWithContentsOfURL:url1];
+                animatedImage2 = [FLAnimatedImage animatedImageWithGIFData:data2];
     
-        });
-    });
+                
+                //        回到主线程
+                [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                    self.img.animatedImage = animatedImage2;
+                    
+                    //                存放图片倒字典
+                    if (animatedImage2) {
+                        self.images[path1] = animatedImage2;
+                    }
+                    
+                    //                从字典种删除下载操作
+                    [self.operrations removeObjectForKey:path1];
+//                    self.block(indexPath);
+                }];
+            }];
+            
+            
+            //    添加操作倒队列
+            [self.queue addOperation:operation];
+            
+            //        添加倒字典
+            if (operation) {
+                
+//                [self.operrations setObject:operation forKey:path1];
+                NSLog(@"====%@",self.operrations);
+            self.operrations[path1] = operation;
+            }
+      
+        }
+
+    }
+    
+   
+
 
     
     

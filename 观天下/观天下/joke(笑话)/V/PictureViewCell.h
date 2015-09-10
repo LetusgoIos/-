@@ -15,6 +15,7 @@
 @property(nonatomic,strong)UILabel *nickname;
 @property(nonatomic,copy)UILabel *content;
 @property(nonatomic,strong)FLAnimatedImageView *img;
+@property(nonatomic,copy)void(^block)(NSIndexPath * indexPath);
 
 //赞
 //@property(nonatomic,copy)NSString *praise;

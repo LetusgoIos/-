@@ -50,6 +50,10 @@
         PictureMode *PictureMode = self.dataSouce[indexPath.row];
         
         [cell updateCellWithApp:PictureMode anIndexPath:indexPath];
+        [cell setBlock:^(NSIndexPath *index) {
+                 [self.tableAll reloadRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationNone];
+        }];
+        
     }
     return cell;
 }
