@@ -31,7 +31,7 @@
         
 #pragma mark -- 图片
         self.ImageView = [[UIImageView alloc]init];
-        self.ImageView.backgroundColor = [UIColor redColor];
+        self.ImageView.backgroundColor = [UIColor grayColor];
         [superView addSubview:self.ImageView];
         
         

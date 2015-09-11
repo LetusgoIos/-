@@ -52,7 +52,6 @@ UIFont *lightFont;
         [_button2 addTarget:self action:@selector(btAction:) forControlEvents:UIControlEventTouchUpInside];
         
         
-        
         //        默认情况
         currentTag=101;
       

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.navigationItem.title = @"我";
     
     
 }
@@ -57,6 +57,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     if (indexPath.section == 0) {
         UILabel *txtLab = [[UILabel alloc] init];
@@ -70,6 +71,7 @@
         loginBtn.frame = CGRectMake(0, 100, 200, 30);
          loginBtn.center = CGPointMake(WScreen / 2.0f, 120);
         [loginBtn setTitle:@"登录/注册" forState:UIControlStateNormal];
+        [loginBtn setTitleColor:[UIColor colorWithRed:214.0/255 green:102.0/255 blue:64.0/255 alpha:1.0] forState:UIControlStateNormal];
         [loginBtn.layer setCornerRadius:5];
         
 

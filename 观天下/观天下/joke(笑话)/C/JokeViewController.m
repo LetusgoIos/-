@@ -31,8 +31,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
     [self initTitle];
+    
     
     titleHeight=35;
     bgViewHeight=HScreen-64-titleHeight;
@@ -57,11 +57,11 @@
     
     titleLabel.font = [UIFont boldSystemFontOfSize:20];
     
-    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textColor = [UIColor colorWithRed:214.0/255 green:102.0/255 blue:64.0/255 alpha:1.0];
     
     titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    titleLabel.text = @"新闻";
+    titleLabel.text = @"笑话";
     self.navigationItem.titleView = titleLabel;
 }
 -(void)initScroll{

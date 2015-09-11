@@ -22,7 +22,7 @@ static int n = 1;
     [super viewDidLoad];
     
     [self downData];
-    
+    self.navigationItem.title = @"笑话";
     
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     HUD.delegate = self;

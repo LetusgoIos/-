@@ -46,7 +46,7 @@
 - (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
-    NSArray *tabBarItemImages = @[@"tabbar_limitfree", @"tabbar_reduceprice", @"tabbar_appfree",@"tabbar_subject",@"tabbar_rank"];
+    NSArray *tabBarItemImages = @[@"xinwen", @"tugua", @"user"];
     
     NSArray *titles = @[@"新闻",@"笑话",@"我"];
     
@@ -62,7 +62,7 @@
                                   };
         textAttributes_selected = @{
                                     NSFontAttributeName: [UIFont systemFontOfSize:12],
-                                    NSForegroundColorAttributeName: [UIColor colorWithRed:14/255.0 green:154/255.0 blue:255/255.0 alpha:1.0],
+                                    NSForegroundColorAttributeName: [UIColor colorWithRed:214.0/255 green:102.0/255 blue:64.0/255 alpha:1.0],
                                     };
     }
     
@@ -74,9 +74,9 @@
         
         
         [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];
-        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_press",
+        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_select",
                                                       [tabBarItemImages objectAtIndex:index]]];
-        UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@",
+        UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_nor",
                                                         [tabBarItemImages objectAtIndex:index]]];
         [item setFinishedSelectedImage:selectedimage withFinishedUnselectedImage:unselectedimage];
         

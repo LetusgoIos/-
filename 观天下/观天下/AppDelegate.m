@@ -25,7 +25,7 @@
 //    设置状态栏颜色
     NSDictionary* textAttributes = @{
                                      NSFontAttributeName : [UIFont systemFontOfSize:24],
-                                     NSForegroundColorAttributeName : [UIColor blackColor],
+                                     NSForegroundColorAttributeName :[UIColor colorWithRed:214.0/255 green:102.0/255 blue:64.0/255 alpha:1.0],
                                      };
     
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
