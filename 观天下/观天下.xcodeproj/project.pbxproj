@@ -104,6 +104,10 @@
 		4ED300791BA2FBB3000A963C /* user_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED300731BA2FBB3000A963C /* user_nor.png */; };
 		4ED3007A1BA2FBB3000A963C /* xinwen_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED300741BA2FBB3000A963C /* xinwen_nor.png */; };
 		4ED3007B1BA2FBB3000A963C /* xinwen_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED300751BA2FBB3000A963C /* xinwen_select.png */; };
+		4ED3007F1BA307C5000A963C /* CharNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3007D1BA307C5000A963C /* CharNextViewController.m */; };
+		4ED300801BA307C5000A963C /* CharNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ED3007E1BA307C5000A963C /* CharNextViewController.xib */; };
+		4ED300841BA308AF000A963C /* PicharNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED300821BA308AF000A963C /* PicharNextViewController.m */; };
+		4ED300851BA308AF000A963C /* PicharNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ED300831BA308AF000A963C /* PicharNextViewController.xib */; };
 		4EDA22991BA19CC000DE05CA /* bjtp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA22981BA19CC000DE05CA /* bjtp.png */; };
 		4EF72B531B9ABC0800DCF688 /* MainUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B521B9ABC0800DCF688 /* MainUITabBarController.m */; };
 		4EF72B561B9ABC3200DCF688 /* MainUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B551B9ABC3200DCF688 /* MainUINavigationController.m */; };
@@ -314,6 +318,12 @@
 		4ED300731BA2FBB3000A963C /* user_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_nor.png; sourceTree = "<group>"; };
 		4ED300741BA2FBB3000A963C /* xinwen_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xinwen_nor.png; sourceTree = "<group>"; };
 		4ED300751BA2FBB3000A963C /* xinwen_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xinwen_select.png; sourceTree = "<group>"; };
+		4ED3007C1BA307C5000A963C /* CharNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharNextViewController.h; sourceTree = "<group>"; };
+		4ED3007D1BA307C5000A963C /* CharNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharNextViewController.m; sourceTree = "<group>"; };
+		4ED3007E1BA307C5000A963C /* CharNextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharNextViewController.xib; sourceTree = "<group>"; };
+		4ED300811BA308AF000A963C /* PicharNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicharNextViewController.h; sourceTree = "<group>"; };
+		4ED300821BA308AF000A963C /* PicharNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicharNextViewController.m; sourceTree = "<group>"; };
+		4ED300831BA308AF000A963C /* PicharNextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicharNextViewController.xib; sourceTree = "<group>"; };
 		4EDA22981BA19CC000DE05CA /* bjtp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bjtp.png; sourceTree = "<group>"; };
 		4EF72B511B9ABC0800DCF688 /* MainUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUITabBarController.h; sourceTree = "<group>"; };
 		4EF72B521B9ABC0800DCF688 /* MainUITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITabBarController.m; sourceTree = "<group>"; };
@@ -659,6 +669,12 @@
 				4E3643E51B9C02020004D625 /* CharacterViewController.m */,
 				4E3643E71B9C021C0004D625 /* PictureViewController.h */,
 				4E3643E81B9C021C0004D625 /* PictureViewController.m */,
+				4ED3007C1BA307C5000A963C /* CharNextViewController.h */,
+				4ED3007D1BA307C5000A963C /* CharNextViewController.m */,
+				4ED3007E1BA307C5000A963C /* CharNextViewController.xib */,
+				4ED300811BA308AF000A963C /* PicharNextViewController.h */,
+				4ED300821BA308AF000A963C /* PicharNextViewController.m */,
+				4ED300831BA308AF000A963C /* PicharNextViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -953,9 +969,11 @@
 			files = (
 				4ED300771BA2FBB3000A963C /* tugua_select.png in Resources */,
 				4E3644611B9C66D50004D625 /* shoucang@2x.png in Resources */,
+				4ED300801BA307C5000A963C /* CharNextViewController.xib in Resources */,
 				4E3643A51B9ADA8F0004D625 /* Info.plist in Resources */,
 				4E3644621B9C66D50004D625 /* zhuanfa01@2x.png in Resources */,
 				4ED3007B1BA2FBB3000A963C /* xinwen_select.png in Resources */,
+				4ED300851BA308AF000A963C /* PicharNextViewController.xib in Resources */,
 				4EF950281BA06F7A00183F91 /* ico_cnleft_download.png in Resources */,
 				4ED300761BA2FBB3000A963C /* tugua_nor.png in Resources */,
 				4ED300781BA2FBB3000A963C /* user_select.png in Resources */,
@@ -1027,6 +1045,7 @@
 				4E646F491BA1C9A3006E7E0F /* UIImage+MultiFormat.m in Sources */,
 				4E3644141B9C34F30004D625 /* UIView+MJExtension.m in Sources */,
 				4EF950251BA05AD100183F91 /* FLAnimatedImageView.m in Sources */,
+				4ED300841BA308AF000A963C /* PicharNextViewController.m in Sources */,
 				4E36440D1B9C34F30004D625 /* MJRefreshGifFooter.m in Sources */,
 				4EA4D1C91B9AB4C4002D6312 /* AppDelegate.m in Sources */,
 				4E3643E31B9BEF080004D625 /* SwitchView.m in Sources */,
@@ -1061,6 +1080,7 @@
 				4E36440E1B9C34F30004D625 /* MJRefreshGifHeader.m in Sources */,
 				4E646F4A1BA1C9A3006E7E0F /* UIImage+WebP.m in Sources */,
 				4E3643581B9AC7EB0004D625 /* AFURLRequestSerialization.m in Sources */,
+				4ED3007F1BA307C5000A963C /* CharNextViewController.m in Sources */,
 				4E3643611B9AC7EB0004D625 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4E646F4C1BA1C9A3006E7E0F /* UIImageView+WebCache.m in Sources */,
 				4E3643A91B9ADA8F0004D625 /* MASLayoutConstraint.m in Sources */,

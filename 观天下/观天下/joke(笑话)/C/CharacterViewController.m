@@ -8,6 +8,7 @@
 
 #import "CharacterViewController.h"
 #import "CharacterViewCell.h"
+#import "CharNextViewController.h"
 
 static int n = 1;
 @interface CharacterViewController ()
@@ -89,6 +90,12 @@ static int n = 1;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CharNextViewController *charNext = [[CharNextViewController alloc]init];
+    [self.navigationController popToViewController:charNext animated:YES];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

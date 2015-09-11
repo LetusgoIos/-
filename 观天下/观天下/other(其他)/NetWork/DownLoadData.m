@@ -83,7 +83,7 @@
     NSString *url = [NSString stringWithFormat:@"http://zaijiawan.com/news/news/getGalleryNews.jsp?appname=readingnews360junshi&version=2.2.1&os=ios&hardware=iphone"];
     return [[AFAppDotNetAPIClient sharedClient]GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        NSString *string = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSString *string = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
 
         
         //        存放数据某型
@@ -181,6 +181,25 @@
             block(nil,error);
         }
     }];
+    
+}
+
+#pragma mark -- 笑文详情页
++ (NSURLSessionDataTask *)getChDetailsPageData:(void (^) (id obj, NSError *err))block withPage:(int)page
+{
+    
+        NSString *url = [NSString stringWithFormat:@"http://jbls.qingyou.cn/inter/inter/Comment?sid=%d&type=1",page];
+    return [[AFAppDotNetAPIClient sharedClient]GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+    
+    
+    
+    
     
 }
 

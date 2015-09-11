@@ -22,8 +22,10 @@
 //笑文模块
 + (NSURLSessionDataTask *)getCharacterPageData:(void (^) (id obj, NSError *err))block withPage:(int)page;
 
-//笑文笑图
+//笑图图片
 + (NSURLSessionDataTask *)getPicPageData:(void (^) (id obj, NSError *err))block withPage:(int)page;
+//笑文详情页
++ (NSURLSessionDataTask *)getChDetailsPageData:(void (^) (id obj, NSError *err))block withPage:(int)page;
 @end
 
 
