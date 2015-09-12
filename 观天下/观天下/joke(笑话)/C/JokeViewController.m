@@ -87,6 +87,7 @@
     
     
     tableView1=[[CharacterViewController alloc]init];
+    
     tableView1.view.frame = CGRectMake(0, 0-64, WScreen, HScreen -64-44);
     [scrollView addSubview:tableView1.view];
 

@@ -109,6 +109,9 @@
 		4ED300841BA308AF000A963C /* PicharNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED300821BA308AF000A963C /* PicharNextViewController.m */; };
 		4ED300851BA308AF000A963C /* PicharNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ED300831BA308AF000A963C /* PicharNextViewController.xib */; };
 		4EDA22991BA19CC000DE05CA /* bjtp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA22981BA19CC000DE05CA /* bjtp.png */; };
+		4EDD0FAA1BA3D1DA005F9DE9 /* CharaNextMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0FA91BA3D1DA005F9DE9 /* CharaNextMode.m */; };
+		4EDD0FAE1BA400AC005F9DE9 /* PharAndCharTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0FAC1BA400AC005F9DE9 /* PharAndCharTableViewCell.m */; };
+		4EDD0FAF1BA400AC005F9DE9 /* PharAndCharTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EDD0FAD1BA400AC005F9DE9 /* PharAndCharTableViewCell.xib */; };
 		4EF72B531B9ABC0800DCF688 /* MainUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B521B9ABC0800DCF688 /* MainUITabBarController.m */; };
 		4EF72B561B9ABC3200DCF688 /* MainUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B551B9ABC3200DCF688 /* MainUINavigationController.m */; };
 		4EF72B591B9ABC6700DCF688 /* JokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B581B9ABC6700DCF688 /* JokeViewController.m */; };
@@ -325,6 +328,11 @@
 		4ED300821BA308AF000A963C /* PicharNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicharNextViewController.m; sourceTree = "<group>"; };
 		4ED300831BA308AF000A963C /* PicharNextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicharNextViewController.xib; sourceTree = "<group>"; };
 		4EDA22981BA19CC000DE05CA /* bjtp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bjtp.png; sourceTree = "<group>"; };
+		4EDD0FA81BA3D1DA005F9DE9 /* CharaNextMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharaNextMode.h; sourceTree = "<group>"; };
+		4EDD0FA91BA3D1DA005F9DE9 /* CharaNextMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharaNextMode.m; sourceTree = "<group>"; };
+		4EDD0FAB1BA400AC005F9DE9 /* PharAndCharTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PharAndCharTableViewCell.h; sourceTree = "<group>"; };
+		4EDD0FAC1BA400AC005F9DE9 /* PharAndCharTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PharAndCharTableViewCell.m; sourceTree = "<group>"; };
+		4EDD0FAD1BA400AC005F9DE9 /* PharAndCharTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PharAndCharTableViewCell.xib; sourceTree = "<group>"; };
 		4EF72B511B9ABC0800DCF688 /* MainUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUITabBarController.h; sourceTree = "<group>"; };
 		4EF72B521B9ABC0800DCF688 /* MainUITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITabBarController.m; sourceTree = "<group>"; };
 		4EF72B541B9ABC3200DCF688 /* MainUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUINavigationController.h; sourceTree = "<group>"; };
@@ -686,6 +694,8 @@
 				4E3643EB1B9C22300004D625 /* CharacterMode.m */,
 				4E3643ED1B9C225E0004D625 /* PictureMode.h */,
 				4E3643EE1B9C225E0004D625 /* PictureMode.m */,
+				4EDD0FA81BA3D1DA005F9DE9 /* CharaNextMode.h */,
+				4EDD0FA91BA3D1DA005F9DE9 /* CharaNextMode.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -699,6 +709,9 @@
 				4E6002151B9D390C00692A41 /* PictureViewCell.m */,
 				4E3643E11B9BEF080004D625 /* SwitchView.h */,
 				4E3643E21B9BEF080004D625 /* SwitchView.m */,
+				4EDD0FAB1BA400AC005F9DE9 /* PharAndCharTableViewCell.h */,
+				4EDD0FAC1BA400AC005F9DE9 /* PharAndCharTableViewCell.m */,
+				4EDD0FAD1BA400AC005F9DE9 /* PharAndCharTableViewCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -967,6 +980,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EDD0FAF1BA400AC005F9DE9 /* PharAndCharTableViewCell.xib in Resources */,
 				4ED300771BA2FBB3000A963C /* tugua_select.png in Resources */,
 				4E3644611B9C66D50004D625 /* shoucang@2x.png in Resources */,
 				4ED300801BA307C5000A963C /* CharNextViewController.xib in Resources */,
@@ -1013,6 +1027,7 @@
 				4E3643DD1B9B09DE0004D625 /* NextViewController.m in Sources */,
 				4E3643E01B9B1C580004D625 /* TitileMode.m in Sources */,
 				4E3643AB1B9ADA8F0004D625 /* MASViewConstraint.m in Sources */,
+				4EDD0FAE1BA400AC005F9DE9 /* PharAndCharTableViewCell.m in Sources */,
 				4E36440C1B9C34F30004D625 /* MJRefreshFooter.m in Sources */,
 				4E646F441BA1C9A3006E7E0F /* SDWebImageDownloaderOperation.m in Sources */,
 				4E3643571B9AC7EB0004D625 /* AFURLConnectionOperation.m in Sources */,
@@ -1058,6 +1073,7 @@
 				4E3644521B9C65460004D625 /* CharacterViewCell.m in Sources */,
 				4E646F451BA1C9A3006E7E0F /* SDWebImageManager.m in Sources */,
 				4E36440A1B9C34F30004D625 /* MJRefreshComponent.m in Sources */,
+				4EDD0FAA1BA3D1DA005F9DE9 /* CharaNextMode.m in Sources */,
 				4E3643621B9AC7EB0004D625 /* UIWebView+AFNetworking.m in Sources */,
 				4E6002161B9D390C00692A41 /* PictureViewCell.m in Sources */,
 				4E3643801B9ACFFB0004D625 /* EScrollerView.m in Sources */,

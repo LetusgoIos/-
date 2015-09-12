@@ -95,7 +95,11 @@ static int n = 1;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CharNextViewController *charNext = [[CharNextViewController alloc]init];
-    [self.navigationController popToViewController:charNext animated:YES];
+    CharacterMode *mode = self.dataSouce[indexPath.row];
+    charNext.characterMode = mode;
+    [self presentViewController:charNext animated:YES completion:nil];
+    
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

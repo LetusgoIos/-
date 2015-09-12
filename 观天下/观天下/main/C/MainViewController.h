@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-
 @property(nonatomic,strong)UITableView *tableAll;
 @property(nonatomic,strong)NSMutableArray *dataSouce;
 @end

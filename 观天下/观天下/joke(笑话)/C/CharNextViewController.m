@@ -7,8 +7,14 @@
 //
 
 #import "CharNextViewController.h"
-
-@interface CharNextViewController ()
+#import "CharacterMode.h"
+#import "CharacterViewCell.h"
+@interface CharNextViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView * table;
+    UIView *logView;
+    NSMutableArray *dataSouce;
+}
 
 @end
 
@@ -17,27 +23,111 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    logView = [[UIView alloc]init];
+    logView.backgroundColor = [UIColor lightGrayColor];
+    logView.frame = CGRectMake(0, 20, WScreen, 64);
+    
+    self.view.frame = CGRectMake(0, 64, WScreen, HScreen);
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WScreen, HScreen) style:UITableViewStylePlain];
+    table.delegate = self;
+    table.dataSource = self;
+    [self.view addSubview:table];
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 16, 44 , 44);
+    [btn setTitle:@"返回" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(Return:) forControlEvents:UIControlEventTouchUpInside];
+    [logView addSubview:btn];
+    
+//    开辟空间
+    dataSouce = [[NSMutableArray alloc]init];
+    
+    
+//    加载数据
+    [self downData];
 }
 
+//返回
+-(void)Return:(id)btn
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 1;
+    }
+    return dataSouce.count;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section ==  0) {
+        static NSString *ID = @"CELLID";
+        CharacterViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        if (cell == nil) {
+            cell = [[CharacterViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        [cell updateCellWithActApp:self.characterMode anIndexPath:indexPath];
+        return cell;
+    }else{
+        UITableViewCell *cell =[[UITableViewCell alloc]init];
+        return cell;
+    }
+  
+    
+}
+#pragma mark -- 下载数据
 -(void)downData{
     [DownLoadData getChDetailsPageData:^(id obj, NSError *err) {
         
+        if (obj) {
+            dataSouce = obj;
+            [table reloadData];
+        }else{
+            
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"数据下载失败" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+        
     } withPage:103681];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 64;
+    }else{
+        return 40;
+    }
+    
 }
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return logView;
+    }
+    
+    UILabel *label = [[UILabel alloc]init];
+    label.font = [UIFont systemFontOfSize:13];
+    label.backgroundColor = [UIColor lightGrayColor];
+    label.alpha = 0.5;
 
-/*
-#pragma mark - Navigation
+    label.text = @"  所有评论";
+    return label;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CharacterViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
+}
 
 @end

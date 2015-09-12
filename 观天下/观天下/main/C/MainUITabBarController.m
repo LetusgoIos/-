@@ -27,7 +27,7 @@
     MainUINavigationController *newNav = [[MainUINavigationController alloc] initWithRootViewController:new];
     
     //    2.笑话
-    JokeViewController *Joke = [[JokeViewController alloc]init];
+     JokeViewController *Joke = [[JokeViewController alloc]init];
     MainUINavigationController *JokeNav = [[MainUINavigationController alloc] initWithRootViewController:Joke];
     
     

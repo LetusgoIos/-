@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CharacterMode;
 @interface CharNextViewController : UIViewController
-
+@property(nonatomic,strong)CharacterMode *characterMode;
 @end

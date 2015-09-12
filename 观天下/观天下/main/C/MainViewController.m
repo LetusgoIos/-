@@ -22,7 +22,6 @@
     [super viewDidLoad];
 
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     _tableAll = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64-44) style:UITableViewStylePlain];
     _tableAll.delegate = self;
     _tableAll.dataSource = self;

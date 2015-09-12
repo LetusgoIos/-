@@ -13,6 +13,7 @@
 #import "TitileMode.h"
 #import "CharacterMode.h"
 #import "PictureMode.h"
+#import "CharaNextMode.h"
 @implementation DownLoadData
 
 #pragma mark --新闻模块
@@ -190,10 +191,27 @@
     
         NSString *url = [NSString stringWithFormat:@"http://jbls.qingyou.cn/inter/inter/Comment?sid=%d&type=1",page];
     return [[AFAppDotNetAPIClient sharedClient]GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@",responseObject);
+        
+        
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        
+        NSArray *jsonArr = [json objectForKey:@"alljson"];
+        
+        NSMutableArray *dataArr = [[NSMutableArray alloc]init];
+        [jsonArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            CharaNextMode *app = [[CharaNextMode alloc]initWithDic:obj];
+            [dataArr addObject:app];
+        }];
+                          
+        if (block) {
+            block(dataArr,nil);
+        }
         
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (block) {
+            block(nil,error);
+        }
         
     }];
     

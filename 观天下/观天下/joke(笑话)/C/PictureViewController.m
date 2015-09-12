@@ -8,7 +8,7 @@
 
 #import "PictureViewController.h"
 #import "PictureViewCell.h"
-
+#import "PictureMode.h"
 @interface PictureViewController ()
 
 @end
@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor greenColor];
+
     [self downData];
 }
 
@@ -57,6 +57,7 @@
     }
     return cell;
 }
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
         return self.dataSouce.count;
@@ -72,14 +73,6 @@
 
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
