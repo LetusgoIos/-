@@ -9,6 +9,7 @@
 #import "CharNextViewController.h"
 #import "CharacterMode.h"
 #import "CharacterViewCell.h"
+#import "PharAndCharTableViewCell.h"
 @interface CharNextViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView * table;
@@ -79,7 +80,14 @@
         [cell updateCellWithActApp:self.characterMode anIndexPath:indexPath];
         return cell;
     }else{
-        UITableViewCell *cell =[[UITableViewCell alloc]init];
+        NSString *CD2 = @"CD2";
+        PharAndCharTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CD2];
+        if (cell == nil) {
+            cell = [[PharAndCharTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CD2];
+        }
+        CharaNextMode *nextMode = dataSouce[indexPath.row];
+        [cell updateCellWithApp:nextMode anIndexPath:indexPath];
+        NSLog(@"%ld",indexPath.row);
         return cell;
     }
   
@@ -98,14 +106,14 @@
             [alertView show];
         }
         
-    } withPage:103681];
+    } withPage:[_characterMode.myId intValue]];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
         return 64;
     }else{
-        return 40;
+        return 44;
     }
     
 }
@@ -126,8 +134,13 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    if (indexPath.section == 0) {
+        CharacterViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+        return cell.frame.size.height;
+    }
     CharacterViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    return cell.frame.size.height;
+     return cell.frame.size.height +20;
+
 }
 
 @end

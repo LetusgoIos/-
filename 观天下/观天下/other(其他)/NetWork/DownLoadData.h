@@ -26,6 +26,9 @@
 + (NSURLSessionDataTask *)getPicPageData:(void (^) (id obj, NSError *err))block withPage:(int)page;
 //笑文详情页
 + (NSURLSessionDataTask *)getChDetailsPageData:(void (^) (id obj, NSError *err))block withPage:(int)page;
+
+//笑图详情页
++ (NSURLSessionDataTask *)getPicNextPageData:(void (^) (id obj, NSError *err))block withPage:(int)page;
 @end
 
 

@@ -14,6 +14,7 @@
 #import "CharacterMode.h"
 #import "PictureMode.h"
 #import "CharaNextMode.h"
+#import "PicNextMode.h"
 @implementation DownLoadData
 
 #pragma mark --新闻模块
@@ -214,6 +215,44 @@
         }
         
     }];
+    
+    
+    
+    
+    
+}
++ (NSURLSessionDataTask *)getPicNextPageData:(void (^) (id obj, NSError *err))block withPage:(int)page
+{
+    
+    NSString *url = [NSString stringWithFormat:@"http://jbls.qingyou.cn/inter/inter/Comment?sid=167193&type=2"];
+    
+    return [[AFAppDotNetAPIClient sharedClient]GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        
+        NSArray *jsonArr = [json objectForKey:@"alljson"];
+        
+        NSMutableArray *dataArr = [[NSMutableArray alloc]init];
+        [jsonArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            PicNextMode *app = [[PicNextMode alloc]initWithDic:obj];
+            [dataArr addObject:app];
+        }];
+        
+        if (block) {
+            block(dataArr,nil);
+        }
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (block) {
+            block(nil,error);
+        }
+        
+    }];
+    
+    
+    
     
     
     

@@ -9,6 +9,7 @@
 #import "PictureViewController.h"
 #import "PictureViewCell.h"
 #import "PictureMode.h"
+#import "PicharNextViewController.h"
 @interface PictureViewController ()
 
 @end
@@ -68,6 +69,17 @@
 {
     return 350;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PicharNextViewController *charNext = [[PicharNextViewController alloc]init];
+    PictureMode *mode = self.dataSouce[indexPath.row];
+    charNext.picharNextMode = mode;
+    [self presentViewController:charNext animated:YES completion:nil];
+    
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 

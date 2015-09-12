@@ -9,7 +9,7 @@
 #import "CharacterViewController.h"
 #import "CharacterViewCell.h"
 #import "CharNextViewController.h"
-
+#import "CharacterMode.h"
 static int n = 1;
 @interface CharacterViewController ()
 {
@@ -94,7 +94,7 @@ static int n = 1;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CharNextViewController *charNext = [[CharNextViewController alloc]init];
+     CharNextViewController *charNext = [[CharNextViewController alloc]init];
     CharacterMode *mode = self.dataSouce[indexPath.row];
     charNext.characterMode = mode;
     [self presentViewController:charNext animated:YES completion:nil];

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CharaNextMode;
+@class PicNextMode;
 @interface PharAndCharTableViewCell : UITableViewCell
-
+@property (strong, nonatomic)  UIImageView *pathimg;
+@property (strong, nonatomic)  UILabel *nickname;
+@property (strong, nonatomic)  UILabel *addtime;
+@property (strong, nonatomic)  UILabel *comment;
+-(void)updateCellWithApp:(CharaNextMode *)app anIndexPath:(NSIndexPath *)indexPath;
+-(void)updateCellWithApp2:(PicNextMode *)app anIndexPath:(NSIndexPath *)indexPath;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class PictureMode;
 @interface PicharNextViewController : UIViewController
-
+@property(nonatomic,strong)PictureMode *picharNextMode;
 @end

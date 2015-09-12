@@ -48,6 +48,16 @@
             
         }
     }
+    if ([key isEqualToString:@"id"]) {
+        if ([value isKindOfClass:[NSString class]]) {
+            self.myId = value;
+        }else{
+            int a = (int)value;
+            NSString *string = [NSString stringWithFormat:@"%d",a];
+            self.myId = string;
+            
+        }
+    }
     
     
 }

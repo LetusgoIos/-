@@ -197,7 +197,7 @@
 {
       NSString *path = app.pathimg;
     NSURL *url = [NSURL URLWithString:path];
-    [self.pathimg setImageWithURL:url];
+    [self.pathimg sd_setImageWithURL:url];
     self.nickname.text = app.nickname;
     NSString *string = [NSString stringWithFormat:@"     %@",app.content];
     self.content.text = string;
@@ -216,8 +216,8 @@
     //文本赋值
 //    self.content.text = app.content;
     //设置label的最大行数
-    self.content.numberOfLines = 10;
-    CGSize size = CGSizeMake(300, 1000);
+    self.content.numberOfLines = 20;
+    CGSize size = CGSizeMake(WScreen, 1000);
     CGSize labelSize = [self.content.text sizeWithFont:self.content.font constrainedToSize:size lineBreakMode:NSLineBreakByClipping];
     
     self.content.frame = CGRectMake(self.content.frame.origin.x, self.content.frame.origin.y, labelSize.width, labelSize.height);
@@ -226,11 +226,7 @@
     frame.size.height = labelSize.height+100;
     self.frame = frame;
     
-    
-    
-    
-    
-    
+       
      
 }
 

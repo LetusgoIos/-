@@ -19,6 +19,7 @@
 @property(nonatomic,copy)NSString *addtime;
 //@property(nonatomic,copy)NSString *comall;
 @property(nonatomic,copy)NSString *content;
+@property(nonatomic,copy)NSString *myId;
 
 
 -(instancetype)initWithDic:(NSDictionary *)Dic;
