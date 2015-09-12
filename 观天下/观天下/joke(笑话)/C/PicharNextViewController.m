@@ -107,7 +107,7 @@
             [alertView show];
         }
         
-    } withPage:1212];
+    } withPage:[_picharNextMode.myId intValue]];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

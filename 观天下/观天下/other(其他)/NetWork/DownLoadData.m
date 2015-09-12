@@ -224,7 +224,7 @@
 + (NSURLSessionDataTask *)getPicNextPageData:(void (^) (id obj, NSError *err))block withPage:(int)page
 {
     
-    NSString *url = [NSString stringWithFormat:@"http://jbls.qingyou.cn/inter/inter/Comment?sid=167193&type=2"];
+    NSString *url = [NSString stringWithFormat:@"http://jbls.qingyou.cn/inter/inter/Comment?sid=%d&type=2",page];
     
     return [[AFAppDotNetAPIClient sharedClient]GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
