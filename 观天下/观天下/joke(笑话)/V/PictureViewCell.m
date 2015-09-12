@@ -186,7 +186,7 @@ static NSOperationQueue *queue;
          self.img.animatedImage = image;
     }else{
         
-//        天占位图片
+//        占位图片
         self.img.image = [UIImage imageNamed:@"bjtp"];
         
         NSBlockOperation *operation1 = self.operrations[path1];

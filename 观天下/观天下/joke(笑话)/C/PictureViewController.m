@@ -10,8 +10,12 @@
 #import "PictureViewCell.h"
 #import "PictureMode.h"
 #import "PicharNextViewController.h"
-@interface PictureViewController ()
-
+//页码
+static int n = 1;
+@interface PictureViewController ()<MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 @end
 
 @implementation PictureViewController
@@ -19,6 +23,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    HUD.delegate = self;
+    HUD.labelText = @"Loading";
+    
+    [self.view addSubview:HUD];
+    
+    [HUD show:YES];
+    
+    
+    //    =========下拉刷新==========
+    __weak typeof(self) weakSelf = self;
+    // 添加传统的上拉刷新
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    [self.tableAll addLegendFooterWithRefreshingBlock:^{
+        [weakSelf downData];
+    }];
+    
+    
+    
     [self downData];
 }
 
@@ -29,14 +52,16 @@
         
 
     if (obj) {
-            self.dataSouce = obj;
+            n ++;
+        [HUD hide:YES];
+            [self.dataSouce addObjectsFromArray:obj];
         [self.tableAll reloadData];
         }else{
             
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"数据下载失败" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alertView show];
         }
-    } withPage:1];
+    } withPage:n];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
