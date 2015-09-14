@@ -18,18 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"gif"];
+//    NSString *path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"gif"];
     
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    FLAnimatedImage * animatedImage2 = [FLAnimatedImage animatedImageWithGIFData:data];
+    self.view.backgroundColor = [UIColor redColor];
     
-    FLAnimatedImageView *iangeView = [[FLAnimatedImageView alloc]init];
+//    NSData *data = [NSData dataWithContentsOfFile:path];
+//    FLAnimatedImage * animatedImage2 = [FLAnimatedImage animatedImageWithGIFData:data];
+//    
+//    FLAnimatedImageView *iangeView = [[FLAnimatedImageView alloc]init];
+//    
+//    iangeView.frame = CGRectMake(0, 0,WScreen, HScreen);
+//    
+//    iangeView.animatedImage = animatedImage2;
     
-    iangeView.frame = CGRectMake(0, 0,WScreen, HScreen);
-    
-    iangeView.animatedImage = animatedImage2;
-    
-    [self.view addSubview:iangeView];
+//    [self.view addSubview:iangeView];
     
     
     

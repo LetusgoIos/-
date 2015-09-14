@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainUITabBarController.h"
-#import "qiandaoye.h"
+#import "QianDaoViewController.h"
 #define PK @"0YuSuQOmVnhQkQsnh20yssMW"
 BMKMapManager* _mapManager;
 @interface AppDelegate ()
@@ -43,12 +42,12 @@ BMKMapManager* _mapManager;
     
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
     
-    MainUITabBarController  *rootVC = [[MainUITabBarController alloc]init];
+//    MainUITabBarController  *rootVC = [[MainUITabBarController alloc]init];
     
     
-//    qiandaoye *qian = [[qiandaoye alloc]init];
+    QianDaoViewController *qian = [[QianDaoViewController alloc]init];
 
-    self.window.rootViewController = rootVC;
+    self.window.rootViewController = qian;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

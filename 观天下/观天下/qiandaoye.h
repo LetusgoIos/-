@@ -10,6 +10,5 @@
 
 
 @interface qiandaoye : UIViewController
-@property (strong, nonatomic) IBOutlet UIImageView *myImage;
 
 @end
