@@ -112,6 +112,11 @@
 		4EDD0FAA1BA3D1DA005F9DE9 /* CharaNextMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0FA91BA3D1DA005F9DE9 /* CharaNextMode.m */; };
 		4EDD0FAE1BA400AC005F9DE9 /* PharAndCharTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0FAC1BA400AC005F9DE9 /* PharAndCharTableViewCell.m */; };
 		4EDD0FB21BA41F32005F9DE9 /* PicNextMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0FB11BA41F32005F9DE9 /* PicNextMode.m */; };
+		4EDE57081BA6684200C3FF92 /* 前导页.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDE57071BA6684200C3FF92 /* 前导页.png */; };
+		4EDE570A1BA66EF300C3FF92 /* 前导.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4EDE57091BA66EF300C3FF92 /* 前导.gif */; };
+		4EDE570E1BA6701400C3FF92 /* qiandaoye.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDE570C1BA6701400C3FF92 /* qiandaoye.m */; };
+		4EDE570F1BA6701400C3FF92 /* qiandaoye.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EDE570D1BA6701400C3FF92 /* qiandaoye.xib */; };
+		4EDE57111BA6842500C3FF92 /* ditu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDE57101BA6842500C3FF92 /* ditu.png */; };
 		4EF72B531B9ABC0800DCF688 /* MainUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B521B9ABC0800DCF688 /* MainUITabBarController.m */; };
 		4EF72B561B9ABC3200DCF688 /* MainUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B551B9ABC3200DCF688 /* MainUINavigationController.m */; };
 		4EF72B591B9ABC6700DCF688 /* JokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF72B581B9ABC6700DCF688 /* JokeViewController.m */; };
@@ -334,6 +339,12 @@
 		4EDD0FAC1BA400AC005F9DE9 /* PharAndCharTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PharAndCharTableViewCell.m; sourceTree = "<group>"; };
 		4EDD0FB01BA41F32005F9DE9 /* PicNextMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicNextMode.h; sourceTree = "<group>"; };
 		4EDD0FB11BA41F32005F9DE9 /* PicNextMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicNextMode.m; sourceTree = "<group>"; };
+		4EDE57071BA6684200C3FF92 /* 前导页.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "前导页.png"; sourceTree = "<group>"; };
+		4EDE57091BA66EF300C3FF92 /* 前导.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "前导.gif"; sourceTree = "<group>"; };
+		4EDE570B1BA6701400C3FF92 /* qiandaoye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qiandaoye.h; sourceTree = "<group>"; };
+		4EDE570C1BA6701400C3FF92 /* qiandaoye.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = qiandaoye.m; sourceTree = "<group>"; };
+		4EDE570D1BA6701400C3FF92 /* qiandaoye.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = qiandaoye.xib; sourceTree = "<group>"; };
+		4EDE57101BA6842500C3FF92 /* ditu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ditu.png; sourceTree = "<group>"; };
 		4EF72B511B9ABC0800DCF688 /* MainUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUITabBarController.h; sourceTree = "<group>"; };
 		4EF72B521B9ABC0800DCF688 /* MainUITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITabBarController.m; sourceTree = "<group>"; };
 		4EF72B541B9ABC3200DCF688 /* MainUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUINavigationController.h; sourceTree = "<group>"; };
@@ -627,6 +638,9 @@
 				4EA4D1C81B9AB4C4002D6312 /* AppDelegate.m */,
 				4EA4D1CA1B9AB4C4002D6312 /* Images.xcassets */,
 				4EA4D1CC1B9AB4C4002D6312 /* LaunchScreen.xib */,
+				4EDE570B1BA6701400C3FF92 /* qiandaoye.h */,
+				4EDE570C1BA6701400C3FF92 /* qiandaoye.m */,
+				4EDE570D1BA6701400C3FF92 /* qiandaoye.xib */,
 				4EA4D1C31B9AB4C4002D6312 /* Supporting Files */,
 			);
 			path = "观天下";
@@ -880,6 +894,9 @@
 		4ED3006F1BA2FBB3000A963C /* newsImage */ = {
 			isa = PBXGroup;
 			children = (
+				4EDE57101BA6842500C3FF92 /* ditu.png */,
+				4EDE57091BA66EF300C3FF92 /* 前导.gif */,
+				4EDE57071BA6684200C3FF92 /* 前导页.png */,
 				4ED300701BA2FBB3000A963C /* tugua_nor.png */,
 				4ED300711BA2FBB3000A963C /* tugua_select.png */,
 				4ED300721BA2FBB3000A963C /* user_select.png */,
@@ -990,14 +1007,17 @@
 				4ED3007B1BA2FBB3000A963C /* xinwen_select.png in Resources */,
 				4ED300851BA308AF000A963C /* PicharNextViewController.xib in Resources */,
 				4EF950281BA06F7A00183F91 /* ico_cnleft_download.png in Resources */,
+				4EDE57111BA6842500C3FF92 /* ditu.png in Resources */,
 				4ED300761BA2FBB3000A963C /* tugua_nor.png in Resources */,
 				4ED300781BA2FBB3000A963C /* user_select.png in Resources */,
 				4E36445C1B9C66D50004D625 /* dianzan01@2x.png in Resources */,
 				4E36445F1B9C66D50004D625 /* pinglun02@2x.png in Resources */,
 				4ED3007A1BA2FBB3000A963C /* xinwen_nor.png in Resources */,
+				4EDE570A1BA66EF300C3FF92 /* 前导.gif in Resources */,
 				4EF9502C1BA06FC700183F91 /* ico_cnleft_setting.png in Resources */,
 				4E3644601B9C66D50004D625 /* shoucang01@2x.png in Resources */,
 				4EF9502A1BA06FAC00183F91 /* ico_cnleft_list.png in Resources */,
+				4EDE570F1BA6701400C3FF92 /* qiandaoye.xib in Resources */,
 				4EF950261BA05AD100183F91 /* Info.plist in Resources */,
 				4EDA22991BA19CC000DE05CA /* bjtp.png in Resources */,
 				4EA4D1CE1B9AB4C4002D6312 /* LaunchScreen.xib in Resources */,
@@ -1006,6 +1026,7 @@
 				4E36445D1B9C66D50004D625 /* dianzan02@2x.png in Resources */,
 				4ED300791BA2FBB3000A963C /* user_nor.png in Resources */,
 				4EA4D1CB1B9AB4C4002D6312 /* Images.xcassets in Resources */,
+				4EDE57081BA6684200C3FF92 /* 前导页.png in Resources */,
 				4E36445E1B9C66D50004D625 /* pinglun01@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1096,6 +1117,7 @@
 				4E3643671B9AC80D0004D625 /* AFAppDotNetAPIClient.m in Sources */,
 				4E646F4D1BA1C9A3006E7E0F /* UIView+WebCacheOperation.m in Sources */,
 				4E36440E1B9C34F30004D625 /* MJRefreshGifHeader.m in Sources */,
+				4EDE570E1BA6701400C3FF92 /* qiandaoye.m in Sources */,
 				4E646F4A1BA1C9A3006E7E0F /* UIImage+WebP.m in Sources */,
 				4E3643581B9AC7EB0004D625 /* AFURLRequestSerialization.m in Sources */,
 				4ED3007F1BA307C5000A963C /* CharNextViewController.m in Sources */,

@@ -35,15 +35,15 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 1) {
+    if (section == 1 || section == 2) {
         return 2;
     }
     else
     {
         return 1;
     }
-}
 
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         return 180;
@@ -93,14 +93,29 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     if(indexPath.section == 2){
-        [cell.imageView setImage:[UIImage imageNamed:@"ico_cnleft_setting.png"]];
-        [cell.textLabel setText:@"设置"];
-        [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        if (indexPath.row == 0) {
+            [cell.imageView setImage:[UIImage imageNamed:@"ico_cnleft_setting.png"]];
+            [cell.textLabel setText:@"设置"];
+            [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }else{
+            [cell.imageView setImage:[UIImage imageNamed:@"ditu.png"]];
+            [cell.textLabel setText:@"地图"];
+            [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+
         
     }
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 2 && indexPath.row == 1) {
+        NSLog(@"点击");
+    }
 }
 -(void)loginBtnClick:(id)btn
 {

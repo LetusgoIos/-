@@ -220,10 +220,10 @@
     CGSize size = CGSizeMake(WScreen, 1000);
     CGSize labelSize = [self.content.text sizeWithFont:self.content.font constrainedToSize:size lineBreakMode:NSLineBreakByClipping];
     
-    self.content.frame = CGRectMake(self.content.frame.origin.x, self.content.frame.origin.y, labelSize.width, labelSize.height);
+    self.content.frame = CGRectMake(self.content.frame.origin.x, self.content.frame.origin.y, labelSize.width, labelSize.height+90);
     
     //计算出自适应的高度
-    frame.size.height = labelSize.height+100;
+    frame.size.height = labelSize.height+190;
     self.frame = frame;
     
        

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainUITabBarController.h"
+#import "qiandaoye.h"
 
 @interface AppDelegate ()
 
@@ -30,13 +31,12 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
     
-    MainUITabBarController  *rootVC = [[MainUITabBarController alloc] init];
+    MainUITabBarController  *rootVC = [[MainUITabBarController alloc]init];
     
+    
+//    qiandaoye *qian = [[qiandaoye alloc]init];
+
     self.window.rootViewController = rootVC;
-
-
-    
-    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
