@@ -7,6 +7,7 @@
 //
 
 #import "MeViewController.h"
+#import "ViewController.h"
 
 @interface MeViewController ()
 
@@ -115,6 +116,8 @@
 {
     if (indexPath.section == 2 && indexPath.row == 1) {
         NSLog(@"点击");
+        ViewController *view = [[ViewController alloc]init];
+        [self.navigationController pushViewController:view animated:YES];
     }
 }
 -(void)loginBtnClick:(id)btn
